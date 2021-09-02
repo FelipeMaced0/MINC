@@ -1,8 +1,10 @@
 #ifndef __TREE_H__
 #define __TREE_H__
 
+#include "node.h"
+
 typedef struct Tree Tree;
-typedef struct Node Node;
+//typedef struct Node Node;
 
 
 struct Node{
@@ -18,7 +20,7 @@ struct Tree{
 };
 
 Tree* create_tree();
-Node* create_node(void *key, unsigned short type_size);
+//Node* create_node(void *key, unsigned short type_size);
 Node *min(Node *x);
 Node *max(Node *x);
 Node *search(Node *x, void *key);

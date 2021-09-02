@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "tree.h"
+#include "../cmp/cmp.h"
 
 static int (*cmp)(void *node_a, void *node_b);
 
@@ -8,14 +9,18 @@ void set_cmp(int(*cmp_user)(void *node_a, void *node_b)){
 	cmp = cmp_user;
 }
 
-
+/*
+ * Make sure that "n" isn't "NULL" when
+ * dereferencing it.
+ *
+ * */
 void *extract_key(Node *n){
 	return (n != NULL) ? n->key : NULL;
 }
 
 /*
- *Standard function for comparison
- *between integers.
+ * Standard function for comparison
+ * between integers.
  *
  * if i-j > 0  thus a  > b
  * if i-j < 0  thus a  < b
